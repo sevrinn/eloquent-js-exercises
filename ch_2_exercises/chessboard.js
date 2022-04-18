@@ -12,10 +12,10 @@
  * # # # #
  */
 
-const chessboard = () => {
+const chessboard = (size) => {
 	let board = ''
-	for (let line = 0; line < 8; line++) {
-		for (let characters = 0; characters < 8; characters++) {
+	for (let line = 0; line < size; line++) {
+		for (let characters = 0; characters < size; characters++) {
 			if ((line + characters) % 2 == 0) {
 				board += ' '
 			} else {
@@ -27,4 +27,4 @@ const chessboard = () => {
 	console.log(board)
 }
 
-chessboard()
+chessboard(100)
