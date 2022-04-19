@@ -6,8 +6,9 @@
 const range = (start, end) => {
 	let myRange = []
 	for (let i = start; i <= end; i++) {
-		console.log(i)
+		myRange.push(i)
 	}
+	return myRange
 }
 
-range(1, 10)
+console.log(range(1, 10))
