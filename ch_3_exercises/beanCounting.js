@@ -6,11 +6,15 @@
  */
 
 const countBs = (str) => {
+	let bCounter = 0
 	for (let i = 0; i <= str.length - 1; i++) {
-		console.log(str[i])
+		if (str[i] === 'B') {
+			bCounter += 1
+		}
 	}
+	return bCounter
 }
 
-countBs('frog')
+console.log(countBs('BbBbBBB'))
 
 const countChar = (str) => {}
