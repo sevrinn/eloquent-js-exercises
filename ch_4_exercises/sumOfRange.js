@@ -16,6 +16,12 @@ const range = (start, end) => {
  * 2. Next write a sum function that takes an array of numbers and returns the sum of these numbers
  */
 
-const sum = (numArr) => {}
+const sum = (numArr) => {
+	arrSum = 0
+	for (let num of numArr) {
+		arrSum += num
+	}
+	return arrSum
+}
 
-console.log(range(1, 10))
+console.log(sum(range(1, 10)))
