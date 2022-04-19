@@ -17,4 +17,14 @@ const countBs = (str) => {
 
 console.log(countBs('BbBbBBB'))
 
-const countChar = (str) => {}
+const countChar = (str, targetChar) => {
+	let charCounter = 0
+	for (let i = 0; i <= str.length - 1; i++) {
+		if (str[i] === targetChar) {
+			charCounter += 1
+		}
+	}
+	return charCounter
+}
+
+console.log(countChar('Koolaid kills knots knackered', 'k'))
