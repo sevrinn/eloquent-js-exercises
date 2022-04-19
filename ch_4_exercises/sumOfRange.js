@@ -11,4 +11,11 @@ const range = (start, end) => {
 	return myRange
 }
 
+/**
+ * Problem:
+ * 2. Next write a sum function that takes an array of numbers and returns the sum of these numbers
+ */
+
+const sum = (numArr) => {}
+
 console.log(range(1, 10))
