@@ -21,3 +21,17 @@ const arrayToList = (arr) => {
 }
 
 console.log(arrayToList([1, 2, 3, 4, 5]))
+
+/**
+ * write a listToArray function that produces an array from a list
+ */
+
+const listToArray = (list) => {
+	let array
+	for (let node = list; node != null; node = node.rest) {
+		console.log(node.value)
+	}
+}
+
+let test = arrayToList([1, 2, 3])
+listToArray(test)
