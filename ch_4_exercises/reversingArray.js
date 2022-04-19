@@ -12,7 +12,17 @@ const reverseArray = (arr) => {
 /**
  * Problem 2. Write a function reverseArrayInPlace, modifying the given array by reversing its elements;
  */
-// const reverseArrayInPlace = (arr) => {}
+const reverseArrayInPlace = (arr) => {
+	let arrayMid = Math.floor(arr.length / 2)
 
-let arrayValue = ['A', 'B', 'C']
-console.log(reverseArray(arrayValue))
+	for (let i = 0; i <= arrayMid; i++) {
+		let temp = arr[i]
+		arr[i] = arr[arr.length - 1 - i]
+		arr[arr.length - 1 - i] = temp
+	}
+	return arr
+}
+
+let arrayValue = ['A', 'B', 'C', 'D', 'E']
+// console.log(reverseArray(arrayValue))
+console.log(reverseArrayInPlace(arrayValue))
