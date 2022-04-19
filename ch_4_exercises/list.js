@@ -27,11 +27,12 @@ console.log(arrayToList([1, 2, 3, 4, 5]))
  */
 
 const listToArray = (list) => {
-	let array
+	let array = []
 	for (let node = list; node != null; node = node.rest) {
-		console.log(node.value)
+		array.push(node.value)
 	}
+	return array
 }
 
-let test = arrayToList([1, 2, 3])
-listToArray(test)
+let testList = arrayToList([1, 2, 3])
+console.log(listToArray(testList))
