@@ -6,27 +6,33 @@
  *
  */
 
-//I need to do a couple of things for this one
-// 1. find out whether values should be compared directly (===) or have their properties compared
-// 1a.use typeof to ascertain type
-// if both produce "object", do a deep comparison
-//take into account type of null also produces "object"
 const deepEqual = (a, b) => {
-	if (typeof a == 'object' && a != null && typeof b == 'object' && b != null) {
-		//deep comparison
-		console.log('deep comparison')
-	} else {
-		//direct comparison
-		console.log('direct comparison')
+	//direct comparison
+	if (a === b) return true
+
+	//deep comparison
+	if (typeof a != 'object' || a == null || typeof b != 'object' || b == null)
+		return false
+
+	//gets each objects keys
+	let aKeys = Object.keys(a),
+		bKeys = Object.keys(b)
+
+	//checks if objects keys have same length
+	if (aKeys.length != bKeys.length) return false
+
+	// loops through keys of a
+	// if bKeys doesnt include the key or if the keys dont match return false
+	for (let key of aKeys) {
+		if (!bKeys.includes(key) || !deepEqual(a[key], b[key])) return false
 	}
+	return true
 }
 
 let obj = { here: { is: 'an' }, object: 2 }
-let obj2 = { a: 1, b: 2, c: 3 }
-let num = 5
-let str = 'text'
-let bool = true
-console.log(deepEqual(obj, obj2)) //expecting deep comparison
-console.log(deepEqual(obj, num)) //expecting direct
-console.log(deepEqual(str, str)) //expecting direct
-console.log(deepEqual(obj, null)) //expecting direct
+console.log(deepEqual(obj, obj))
+// → true
+console.log(deepEqual(obj, { here: 1, object: 2 }))
+// → false
+console.log(deepEqual(obj, { here: { is: 'an' }, object: 2 }))
+// → true
