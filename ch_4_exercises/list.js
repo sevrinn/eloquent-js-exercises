@@ -38,7 +38,7 @@ let testList = arrayToList([1, 2, 3])
 console.log(listToArray(testList))
 
 /**
- * write a prepend function that takes an element and a list produces an array from a list
+ * write a prepend function that takes an element and a list and produces an array from a list
  */
 
 const prepend = (element, list) => {
@@ -46,3 +46,16 @@ const prepend = (element, list) => {
 	return newList
 }
 console.log(prepend(0, testList))
+
+/**
+ * write a nth function that takes a list and anumber and returns the element at the given postion of the list (zero is the first element) or undefined if it doesnt exist
+ *
+ */
+
+const nth = (list, number) => {
+	if (!list) return undefined
+	else if (number == 0) return list.value
+	else return nth(list.rest, number - 1)
+}
+
+console.log(nth(arrayToList([10, 20, 30]), 1))
