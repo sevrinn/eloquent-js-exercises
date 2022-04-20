@@ -19,8 +19,8 @@ const arrayToList = (arr) => {
 	}
 	return list
 }
-
-console.log(arrayToList([1, 2, 3, 4, 5]))
+let array = [1, 2, 3]
+console.log(arrayToList(array))
 
 /**
  * write a listToArray function that produces an array from a list
@@ -41,4 +41,8 @@ console.log(listToArray(testList))
  * write a prepend function that takes an element and a list produces an array from a list
  */
 
-const prepend = (element, list) => {}
+const prepend = (element, list) => {
+	let newList = { value: element, rest: list }
+	return newList
+}
+console.log(prepend(0, testList))
