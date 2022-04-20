@@ -36,3 +36,9 @@ const listToArray = (list) => {
 
 let testList = arrayToList([1, 2, 3])
 console.log(listToArray(testList))
+
+/**
+ * write a prepend function that takes an element and a list produces an array from a list
+ */
+
+const prepend = (element, list) => {}
