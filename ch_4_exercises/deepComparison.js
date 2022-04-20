@@ -12,11 +12,12 @@
 // if both produce "object", do a deep comparison
 //take into account type of null also produces "object"
 const deepEqual = (a, b) => {
-	if (typeof a === 'object' && typeof b === 'object') {
-		console.log('doing a deep comparison')
+	if (typeof a == 'object' && a != null && typeof b == 'object' && b != null) {
+		//deep comparison
+		console.log('deep comparison')
 	} else {
-		if (a === b) return true
-		else return false
+		//direct comparison
+		console.log('direct comparison')
 	}
 }
 
@@ -25,6 +26,7 @@ let obj2 = { a: 1, b: 2, c: 3 }
 let num = 5
 let str = 'text'
 let bool = true
-console.log(deepEqual(obj, obj2))
-console.log(deepEqual(obj, num))
-console.log(deepEqual(str, str))
+console.log(deepEqual(obj, obj2)) //expecting deep comparison
+console.log(deepEqual(obj, num)) //expecting direct
+console.log(deepEqual(str, str)) //expecting direct
+console.log(deepEqual(obj, null)) //expecting direct
