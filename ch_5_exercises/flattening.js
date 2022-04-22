@@ -4,3 +4,12 @@
  */
 
 let arrays = [[1, 2, 3], [4, 5], [6]]
+
+let flattened = arrays.reduce((totalVal, currentValue) => {
+	return totalVal.concat(currentValue)
+}, [])
+
+console.log(flattened)
+
+// i want to take arrays and reduce it to a single array
+// the call back takes totalVal (first element of array since no)
