@@ -19,3 +19,10 @@ loop(
 	(n) => n - 1,
 	console.log
 )
+
+loop(
+	10,
+	(n) => n < 12,
+	(n) => n + 0.5,
+	console.log
+)
