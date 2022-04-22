@@ -7,4 +7,15 @@
  * 3. calls the update function to create a new value and starts from beginning
  */
 
-const loop = (value, test, updateFunction, bodyFunction) => {}
+const loop = (start, test, updateFunction, bodyFunction) => {
+	for (let value = start; test(value); value = updateFunction(value)) {
+		bodyFunction(value)
+	}
+}
+
+loop(
+	3,
+	(n) => n > 0,
+	(n) => n - 1,
+	console.log
+)
